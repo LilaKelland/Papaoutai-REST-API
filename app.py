@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
 
@@ -6,8 +8,8 @@ from resources.chart_resource import WeekChart, DayChart
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret'
-app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///papaoutai.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # turns off flask sql alchemy not sql alcomy 
+app.config['SQLALCHEMY_DATABASE_URI']=os.environ.get('DATABASE_URL', 'sqlite:///papaoutai.db') # second value is default value
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False 
 api = Api(app)
 
 
