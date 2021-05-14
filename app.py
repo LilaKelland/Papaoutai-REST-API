@@ -10,9 +10,6 @@ app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///papaoutai.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # turns off flask sql alchemy not sql alcomy 
 api = Api(app)
 
-@app.before_first_request  # this addition will create tables rather than create_tables 
-def create_tables():
-    db.create_all()
 
 api.add_resource(Session, '/session')
 api.add_resource(WeekChart, '/weekChart')

@@ -4,3 +4,5 @@ __pycache__/
 .vscode/
 venv/
 papaoutai.db
+-r models/__pycache__/
+-r resources/__pycache__/
