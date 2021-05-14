@@ -8,7 +8,7 @@ from resources.chart_resource import WeekChart, DayChart
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret'
-app.config['SQLALCHEMY_DATABASE_URI']=os.environ.get('DATABASE_URL', 'sqlite:///papaoutai.db') # second value is default value
+app.config['SQLALCHEMY_DATABASE_URI']=os.environ.get('DATABASE_URL?sslmode=require', 'sqlite:///papaoutai.db') # second value is default value
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False 
 api = Api(app)
 
