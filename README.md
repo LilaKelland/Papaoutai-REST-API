@@ -3,5 +3,5 @@ This python app adds bathroom sessions to a Posgresql database and sends request
 
 Uses Flask RESTful and Flask SQLAlchemy
 
-Runs on Heroku and tested with Postman.
+Deployed on Heroku and tested with Postman.
  
