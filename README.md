@@ -1,5 +1,5 @@
 # Papaoutai_REST_API
-This python app adds bathroom sessions to a Posgresql database and sends requested day and week charting data to iOS app. 
+This python app adds bathroom sessions to a PostgreSQL database and sends requested day and week charting data to iOS app. 
 
 Uses Flask RESTful and Flask SQLAlchemy
 
