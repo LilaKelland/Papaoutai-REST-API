@@ -49,13 +49,12 @@ class Day_Hours():
             if count == 0:
                 session_minutes = (60 - start_datetime.minute)  # TODO - this may result in over 60 min/ hour - floor this
                 seconds_left = duration - session_minutes * 60
-            
+
+            elif seconds_left >= 3600:
+                session_minutes = 60
+                seconds_left = seconds_left - 3600
             else:
-                if seconds_left >= 3600:
-                    session_minutes = 60
-                    seconds_left = seconds_left - 3600
-                else:
-                    session_minutes = math.floor(seconds_left / 60)
+                session_minutes = math.floor(seconds_left / 60)
 
             if session_hour >= 24:
                 session_hour -= 24
@@ -66,7 +65,7 @@ class Day_Hours():
             datetime_start_of_the_hour = datetime.datetime(start_datetime.year, start_datetime.month, session_day, session_hour)
             segment_date = datetime_start_of_the_hour.strftime('%Y-%m-%d')
             segment_hour = datetime_start_of_the_hour.strftime('%-H')
-            
+
             if str(segment_date) == str(self.day):
 
                 if segment_hour in self.minutes_per_hour:
